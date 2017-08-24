@@ -38,20 +38,34 @@
                 </h1>
                 <h2>
                     <p>Welcome to your iView app!</p>
-                    <Button type="ghost" @click="handleStart">Start iView</Button>
+                    <Button type="ghost" @click="modal1 = true">Start iView</Button>
                 </h2>
+                <Modal
+                    v-model="modal1"
+                    title="普通的Modal对话框标题"
+                    @on-ok="ok"
+                    @on-cancel="cancel">
+                    <p>对话框内容</p>
+                    <p>对话框内容</p>
+                    <p>对话框内容</p>
+                </Modal>
             </Col>
         </Row>
     </div>
 </template>
 <script>
     export default {
+        data () {
+            return {
+                modal1: false
+            };
+        },
         methods: {
-            handleStart() {
-                this.$Modal.info({
-                    title: 'Bravo',
-                    content: 'Now, enjoy the convenience of iView.'
-                });
+            ok () {
+                this.$router.push({path: '/portal'});
+            },
+            cancel () {
+                this.$Message.info('点击了取消');
             }
         }
     };

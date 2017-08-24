@@ -1,11 +1,11 @@
 import Vue from 'vue';
 import iView from 'iview';
 import VueRouter from 'vue-router';
-import Routers from './router';
+import Routers from './router';         // 路由列表
 import Vuex from 'vuex';
 import Util from './libs/util';
-import App from './app.vue';
-import 'iview/dist/styles/iview.css';
+import App from './app.vue';            // 路由挂载
+import 'iview/dist/styles/iview.css';   // 使用 CSS
 
 
 Vue.use(VueRouter);
